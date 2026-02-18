@@ -1,0 +1,170 @@
+<!-- file: C:\Users\javih\OneDrive\Documentos\DemoOptica\pages\analytics.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación y Desarrollo de Juárez - Analytics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Chart.js para gráficos profesionales -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Date Range Picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="../images/Mylogo.png" alt="Innovación y Desarrollo de Juárez" onerror="this.style.display='none'">
+                <h3>Innovación y Desarrollo de Juárez</h3>
+            </div>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="analytics.html" class="active"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a href="ventas.html"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a href="creditos.html"><i class="fas fa-credit-card"></i> Créditos</a></li>
+                <li><a href="historial.html"><i class="fas fa-notes-medical"></i> Historial Clínico</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-chart-pie"></i> Analytics Dashboard</h1>
+                <div class="user-info" id="userInfo"></div>
+            </div>
+
+            <div class="analytics-container">
+                <!-- Filtros de fecha -->
+                <div class="analytics-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Resumen de Rendimiento</h2>
+                    <div class="date-range">
+                        <i class="fas fa-calendar"></i>
+                        <input type="text" id="dateRange" placeholder="Seleccionar rango">
+                        <button onclick="updateAnalytics()" class="btn-primary" style="width: auto; padding: 8px 15px;">
+                            <i class="fas fa-sync-alt"></i> Actualizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-container">
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <h4>Ventas Totales</h4>
+                            <div class="kpi-value" id="totalVentas">$0</div>
+                            <small id="ventasComparacion" class="change-positive">↑ 0% vs mes anterior</small>
+                        </div>
+                        <div class="kpi-icon primary">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <h4>Productos Vendidos</h4>
+                            <div class="kpi-value" id="totalProductosVendidos">0</div>
+                            <small id="productosComparacion" class="change-positive">↑ 0 unidades</small>
+                        </div>
+                        <div class="kpi-icon success">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <h4>Ticket Promedio</h4>
+                            <div class="kpi-value" id="ticketPromedio">$0</div>
+                            <small id="ticketComparacion">vs mes anterior</small>
+                        </div>
+                        <div class="kpi-icon warning">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-info">
+                            <h4>Stock Total</h4>
+                            <div class="kpi-value" id="stockTotal">0</div>
+                            <small id="productosBajoStock">0 productos bajo stock</small>
+                        </div>
+                        <div class="kpi-icon danger">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos Principales -->
+                <div class="analytics-grid">
+                    <!-- Gráfico de Ventas por Día -->
+                    <div class="analytics-card">
+                        <h3><i class="fas fa-chart-line"></i> Ventas por Día</h3>
+                        <div class="chart-container">
+                            <canvas id="ventasChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico de Productos más Vendidos -->
+                    <div class="analytics-card">
+                        <h3><i class="fas fa-chart-bar"></i> Top Productos Vendidos</h3>
+                        <div class="chart-container">
+                            <canvas id="topProductosChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico de Distribución por Tipo -->
+                    <div class="analytics-card">
+                        <h3><i class="fas fa-chart-pie"></i> Distribución por Tipo</h3>
+                        <div class="chart-container">
+                            <canvas id="tipoProductosChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico de Estado de Créditos -->
+                    <div class="analytics-card">
+                        <h3><i class="fas fa-credit-card"></i> Estado de Créditos</h3>
+                        <div class="chart-container">
+                            <canvas id="creditosChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métricas Adicionales -->
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <i class="fas fa-sun fa-2x"></i>
+                        <div class="metric-value" id="ventasLentesSol">0</div>
+                        <div class="metric-label">Lentes de Sol</div>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fas fa-glasses fa-2x"></i>
+                        <div class="metric-value" id="ventasArmazon">0</div>
+                        <div class="metric-label">Lentes de Armazón</div>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fas fa-eye fa-2x"></i>
+                        <div class="metric-value" id="ventasContacto">0</div>
+                        <div class="metric-label">Lentes de Contacto</div>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fas fa-percent fa-2x"></i>
+                        <div class="metric-value" id="tasaConversion">0%</div>
+                        <div class="metric-label">Tasa de Conversión</div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="footer" style="margin-top: 30px;">
+                    <p><i class="far fa-copyright"></i> 2024 Innovación y Desarrollo de Juárez - Analytics Dashboard</p>
+                    <p style="font-size: 12px;">Desarrollado por Francisco Huerta - <i class="fab fa-whatsapp"></i> 656 149 3731</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/analytics.js"></script>
+</body>
+</html>
