@@ -1,0 +1,89 @@
+<!-- file: C:\Users\javih\OneDrive\Documentos\DemoOptica\pages\creditos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación y Desarrollo de Juárez - Créditos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="../images/Mylogo.png" alt="Innovación y Desarrollo de Juárez" onerror="this.style.display='none'">
+                <h3>Innovación y Desarrollo de Juárez</h3>
+            </div>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a href="ventas.html"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a href="creditos.html"><i class="fas fa-credit-card"></i> Créditos</a></li>
+                <li><a href="historial.html"><i class="fas fa-notes-medical"></i> Historial Clínico</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-credit-card"></i> Créditos</h1>
+                <div class="user-info" id="userInfo"></div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-clock fa-2x" style="color: #f56565; margin-bottom: 10px;"></i>
+                    <h4>Total Créditos Pendientes</h4>
+                    <div class="number" id="totalPendiente">$0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle fa-2x" style="color: #48bb78; margin-bottom: 10px;"></i>
+                    <h4>Créditos Pagados</h4>
+                    <div class="number" id="totalPagado">$0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users fa-2x" style="color: #667eea; margin-bottom: 10px;"></i>
+                    <h4>Clientes con Crédito</h4>
+                    <div class="number" id="clientesCredito">0</div>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <div>
+                    <i class="fas fa-search" style="margin-right: 5px; color: #718096;"></i>
+                    <input type="text" id="searchCredito" class="search-box" placeholder="Buscar por cliente...">
+                </div>
+                <select id="filtroEstado" class="search-box" style="width: auto;">
+                    <option value="todos">Todos los créditos</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="pagado">Pagados</option>
+                </select>
+            </div>
+            
+            <table id="tablaCreditos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cliente</th>
+                        <th>Fecha</th>
+                        <th>Monto</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="creditosList">
+                </tbody>
+            </table>
+
+            <!-- Footer con contacto -->
+            <div class="footer" style="margin-top: 20px;">
+                <p><i class="far fa-copyright"></i> 2024 Innovación y Desarrollo de Juárez</p>
+                <p style="font-size: 12px;">Desarrollado por Francisco Huerta - <i class="fab fa-whatsapp"></i> 656 149 3731</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/creditos.js"></script>
+</body>
+</html>

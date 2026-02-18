@@ -1,0 +1,402 @@
+/* file: C:\Users\javih\OneDrive\Documentos\DemoOptica\css\style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Login Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.login-box h2 {
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #5a67d8;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-danger {
+    padding: 10px 20px;
+    background: #f56565;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.demo-info {
+    margin-top: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: #2d3748;
+    color: white;
+    padding: 20px 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #4a5568;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+    background: #4a5568;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.main-content {
+    flex: 1;
+    background: #f7fafc;
+    padding: 20px;
+}
+
+.header {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    color: #4a5568;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    background: #f56565;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Cards */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.card-content {
+    color: #718096;
+    min-height: 100px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table thead {
+    background: #4a5568;
+    color: white;
+}
+
+table th,
+table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+table tbody tr:hover {
+    background: #f7fafc;
+}
+
+/* Forms */
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Actions */
+.actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+}
+
+/* Creditos */
+.credito-info {
+    background: #ebf8ff;
+    border-left: 4px solid #4299e1;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Estadisticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stat-card h4 {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.stat-card .number {
+    color: #2d3748;
+    font-size: 32px;
+    font-weight: bold;
+}
+/* Agregar al final del archivo C:\Users\javih\OneDrive\Documentos\DemoOptica\css\style.css */
+
+/* Logo Styles */
+.logo-container {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.logo-container h2 {
+    color: #2d3748;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.sidebar-logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #4a5568;
+}
+
+.sidebar-logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sidebar-logo h3 {
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Contacto Section */
+.contacto-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.contacto-info h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+}
+
+.contacto-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contacto-item i {
+    font-size: 24px;
+    margin-right: 15px;
+    width: 30px;
+}
+
+.contacto-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contacto-item a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255,255,255,0.5);
+}
+
+.contacto-item a:hover {
+    border-bottom: 1px solid white;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #2d3748;
+    color: white;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+/* Agregar Font Awesome para íconos */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');

@@ -1,0 +1,76 @@
+<!-- file: C:\Users\javih\OneDrive\Documentos\DemoOptica\pages\ventas-create.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optica Sistem (OS) - Nueva Venta</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <h2>Óptica Sistem</h2>
+            <ul>
+                <li><a href="dashboard.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ventas.html">Ventas</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
+                <li><a href="historial.html">Historial Clínico</a></li>
+                <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1>Nueva Venta</h1>
+                <div class="user-info" id="userInfo"></div>
+            </div>
+            
+            <div class="form-container">
+                <form id="ventaForm">
+                    <div class="form-group">
+                        <label for="cliente">Nombre del Cliente:</label>
+                        <input type="text" id="cliente" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="producto">Producto:</label>
+                        <select id="producto" required>
+                            <option value="">Seleccione producto</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" min="1" value="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="precio">Precio Unitario:</label>
+                        <input type="number" id="precio" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="total">Total:</label>
+                        <input type="number" id="total" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="aCredito"> Vender a crédito
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Realizar Venta</button>
+                        <a href="ventas.html" class="btn-danger">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/ventas-create.js"></script>
+</body>
+</html>

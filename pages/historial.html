@@ -1,0 +1,112 @@
+<!-- file: C:\Users\javih\OneDrive\Documentos\DemoOptica\pages\historial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación y Desarrollo de Juárez - Historial Clínico</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="../images/Mylogo.png" alt="Innovación y Desarrollo de Juárez" onerror="this.style.display='none'">
+                <h3>Innovación y Desarrollo de Juárez</h3>
+            </div>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a href="ventas.html"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a href="creditos.html"><i class="fas fa-credit-card"></i> Créditos</a></li>
+                <li><a href="historial.html"><i class="fas fa-notes-medical"></i> Historial Clínico</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-notes-medical"></i> Historial Clínico</h1>
+                <div class="user-info" id="userInfo"></div>
+            </div>
+            
+            <div class="actions">
+                <button onclick="showNewHistorialForm()" class="btn-secondary"><i class="fas fa-plus"></i> Nuevo Registro</button>
+                <div>
+                    <i class="fas fa-search" style="margin-right: 5px; color: #718096;"></i>
+                    <input type="text" id="searchHistorial" class="search-box" placeholder="Buscar por paciente...">
+                </div>
+            </div>
+            
+            <!-- Formulario nuevo registro (oculto inicialmente) -->
+            <div id="nuevoHistorialForm" style="display: none; margin-bottom: 20px;">
+                <div class="form-container">
+                    <h3><i class="fas fa-file-medical"></i> Nuevo Registro Clínico</h3>
+                    <form id="historialForm">
+                        <div class="form-group">
+                            <label for="paciente"><i class="fas fa-user"></i> Nombre del Paciente:</label>
+                            <input type="text" id="paciente" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fechaConsulta"><i class="fas fa-calendar"></i> Fecha de Consulta:</label>
+                            <input type="date" id="fechaConsulta" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="od"><i class="fas fa-eye"></i> Ojo Derecho (OD):</label>
+                            <input type="text" id="od" placeholder="Ej: -1.5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="oi"><i class="fas fa-eye"></i> Ojo Izquierdo (OI):</label>
+                            <input type="text" id="oi" placeholder="Ej: -1.75">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="diagnostico"><i class="fas fa-stethoscope"></i> Diagnóstico:</label>
+                            <textarea id="diagnostico" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="observaciones"><i class="fas fa-comment"></i> Observaciones:</label>
+                            <textarea id="observaciones" rows="2"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Guardar Registro</button>
+                            <button type="button" onclick="hideNewHistorialForm()" class="btn-danger"><i class="fas fa-times"></i> Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Tabla de historial -->
+            <table id="tablaHistorial">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Paciente</th>
+                        <th>Fecha</th>
+                        <th>OD</th>
+                        <th>OI</th>
+                        <th>Diagnóstico</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="historialList">
+                </tbody>
+            </table>
+
+            <!-- Footer con contacto -->
+            <div class="footer" style="margin-top: 20px;">
+                <p><i class="far fa-copyright"></i> 2024 Innovación y Desarrollo de Juárez</p>
+                <p style="font-size: 12px;">Desarrollado por Francisco Huerta - <i class="fab fa-whatsapp"></i> 656 149 3731 | <i class="far fa-envelope"></i> javihuerta335@hotmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/historial.js"></script>
+</body>
+</html>

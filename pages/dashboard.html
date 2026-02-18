@@ -1,0 +1,114 @@
+<!-- file: C:\Users\javih\OneDrive\Documentos\DemoOptica\pages\dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación y Desarrollo de Juárez - Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="../images/Mylogo.png" alt="Innovación y Desarrollo de Juárez" onerror="this.style.display='none'">
+                <h3>Innovación y Desarrollo de Juárez</h3>
+            </div>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a href="ventas.html"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+                <li><a href="creditos.html"><i class="fas fa-credit-card"></i> Créditos</a></li>
+                <li><a href="historial.html"><i class="fas fa-notes-medical"></i> Historial Clínico</a></li>
+                <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-chart-line"></i> Dashboard</h1>
+                <div class="user-info" id="userInfo">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-boxes fa-2x" style="color: #667eea; margin-bottom: 10px;"></i>
+                    <h4>Productos en Stock</h4>
+                    <div class="number" id="totalProductos">0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign fa-2x" style="color: #48bb78; margin-bottom: 10px;"></i>
+                    <h4>Ventas Hoy</h4>
+                    <div class="number" id="ventasHoy">0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-credit-card fa-2x" style="color: #f56565; margin-bottom: 10px;"></i>
+                    <h4>Clientes con Crédito</h4>
+                    <div class="number" id="clientesCredito">0</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-notes-medical fa-2x" style="color: #9f7aea; margin-bottom: 10px;"></i>
+                    <h4>Historias Clínicas</h4>
+                    <div class="number" id="totalHistorias">0</div>
+                </div>
+            </div>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <h3><i class="fas fa-rocket"></i> Accesos Rápidos</h3>
+                    <div class="card-content">
+                        <p><a href="productos-create.html" class="btn-secondary"><i class="fas fa-plus"></i> Nuevo Producto</a></p>
+                        <p><a href="ventas-create.html" class="btn-secondary" style="margin-top:10px;"><i class="fas fa-cash-register"></i> Nueva Venta</a></p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-box-open"></i> Últimos Productos</h3>
+                    <div class="card-content" id="ultimosProductos">
+                        Cargando...
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-history"></i> Últimas Ventas</h3>
+                    <div class="card-content" id="ultimasVentas">
+                        Cargando...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de contacto del desarrollador -->
+            <div class="contacto-info">
+                <h3><i class="fas fa-address-card"></i> Contacto del Desarrollador</h3>
+                <div class="contacto-item">
+                    <i class="fas fa-user"></i>
+                    <p><strong>Francisco Huerta</strong> - Desarrollador de Sistemas</p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <p><a href="https://wa.me/5216561493731" target="_blank">656 149 3731</a> <span style="opacity: 0.8;">(Disponible para soporte)</span></p>
+                </div>
+                <div class="contacto-item">
+                    <i class="far fa-envelope"></i>
+                    <p><a href="mailto:javihuerta335@hotmail.com">javihuerta335@hotmail.com</a></p>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-code"></i>
+                    <p>Sistema desarrollado para Innovación y Desarrollo de Juárez</p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p><i class="far fa-copyright"></i> 2024 Innovación y Desarrollo de Juárez - Optica Sistem (OS) v1.0</p>
+                <p style="font-size: 12px; margin-top: 5px;">Desarrollado por Francisco Huerta | Soporte: 656 149 3731</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
